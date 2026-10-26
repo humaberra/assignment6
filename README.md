@@ -8,8 +8,10 @@ loading / error / empty states, and filters posts by title.
 
 ## How to run
 
+```bash
 npm install
 npm run dev
+```
 
 ## File organization
 

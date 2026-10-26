@@ -6,7 +6,7 @@ import FilterForm from "./components/FilterForm";
 function App() {
   const [state, dispatch] = useReducer(postsReducer, initialState);
   const { posts, loading, error } = state;
-const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("");
   useEffect(() => {
     const controller = new AbortController();
 
@@ -28,17 +28,17 @@ const [filter, setFilter] = useState("");
       controller.abort();
     };
   }, []);
-// Derived state: computed during render, never stored in state
-const normalizedFilter = filter.trim().toLowerCase();
-const filteredPosts = posts.filter((post) =>
-  post.title.toLowerCase().includes(normalizedFilter)
-);
+  // Derived state: computed during render, never stored in state
+  const normalizedFilter = filter.trim().toLowerCase();
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(normalizedFilter)
+  );
   let content;
   if (loading) {
     content = <p>Loading posts...</p>;
   } else if (error) {
     content = <p>Something went wrong: {error}</p>;
-    } else if (filteredPosts.length === 0) {
+  } else if (filteredPosts.length === 0) {
     content = <p>No posts found.</p>;
   } else {
     content = <PostList posts={filteredPosts} />;
