@@ -1,6 +1,6 @@
 # Assignment 6 – Post Dashboard
+Hüma Berra Kolukısa – 230408056
 
-Berra Ceyda Umutlu – 230408024
 Web Programming, Fall 2026
 
 A React app (built with Vite) that loads posts from JSONPlaceholder, shows
